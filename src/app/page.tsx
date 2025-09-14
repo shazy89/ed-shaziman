@@ -1,95 +1,55 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import { Box, Heading, Text, Stack, SimpleGrid, Badge } from '@chakra-ui/react';
+import { motion } from 'framer-motion';
+const MotionBox = motion(Box);
 
-export default function Home() {
+const skills = [
+  'TypeScript',
+  'React',
+  'Next.js',
+  'Node.js',
+  'Chakra UI',
+  'Framer Motion',
+  'Emotion',
+  'GraphQL',
+  'PostgreSQL',
+  'Docker',
+  'Jest',
+  'Cypress',
+];
+
+const interestingData = [
+  { label: 'Years Coding', value: '7+' },
+  { label: 'Open Source PRs', value: '120+' },
+  { label: 'Cups of Coffee', value: '∞' },
+];
+
+export default function HomePage() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+  <MotionBox initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} maxW="3xl" mx="auto" mt={10} p={6}>
+      <Heading as="h1" size="2xl" mb={4} color="teal.300">
+        Hi, I&apos;m Erdoan Shaziman
+      </Heading>
+      <Text fontSize="xl" mb={8} color="gray.300">
+        A passionate full-stack developer focused on building performant, beautiful, and accessible web applications.
+      </Text>
+  <SimpleGrid columns={{ base: 1, md: 3 }} columnGap={6} rowGap={4} mb={8}>
+        {interestingData.map((item) => (
+          <Box key={item.label} bg="gray.800" p={5} borderRadius="lg" boxShadow="md" textAlign="center">
+            <Text fontSize="3xl" fontWeight="bold" color="teal.200">{item.value}</Text>
+            <Text color="gray.400">{item.label}</Text>
+          </Box>
+        ))}
+      </SimpleGrid>
+      <Heading as="h2" size="lg" mb={4} color="teal.200">
+        My Skills
+      </Heading>
+  <Stack direction="row" flexWrap="wrap" gap={3}>
+        {skills.map((skill) => (
+          <Badge key={skill} colorScheme="teal" fontSize="lg" marginBottom={2} px={3} py={1} borderRadius="md">
+            {skill}
+          </Badge>
+        ))}
+      </Stack>
+  </MotionBox>
   );
 }
