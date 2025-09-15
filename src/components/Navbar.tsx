@@ -1,7 +1,6 @@
-"use client";
 import { Box, Flex, HStack,  Button } from '@chakra-ui/react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+
 
 const navLinks = [
   { name: 'Home', path: '/' },
@@ -11,7 +10,7 @@ const navLinks = [
 
 export default function Navbar() {
 
-  const pathname = usePathname();
+
 
   return (
     <Box as="nav" w="100%" px={4} py={2} boxShadow="md" bg={'bg.panel'}>
@@ -23,7 +22,7 @@ export default function Navbar() {
               <Link key={link.name} href={link.path} passHref legacyBehavior>
                 <Button
                   as="a"
-                  variant={pathname === link.path ? 'solid' : 'ghost'}
+                 
                   colorScheme="teal"
                   size="sm"
                 >

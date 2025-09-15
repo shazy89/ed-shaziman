@@ -1,10 +1,10 @@
 import { Box, Heading, Text, Stack } from '@chakra-ui/react';
-import { motion } from 'framer-motion';
-const MotionBox = motion(Box);
+
+
 
 export default function AboutPage() {
   return (
-  <MotionBox initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} maxW="3xl" mx="auto" mt={10} p={6}>
+  <Box  maxW="3xl" mx="auto" mt={10} p={6}>
   <Stack gap={6} alignItems="center">
   {/* You can add an avatar image at /public/avatar.png if desired */}
         <Heading as="h1" size="xl" color="teal.300">
@@ -21,6 +21,6 @@ export default function AboutPage() {
           .
         </Text>
       </Stack>
-  </MotionBox>
+  </Box>
   );
 }

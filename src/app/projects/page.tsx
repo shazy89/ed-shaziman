@@ -1,7 +1,7 @@
 "use client";
 import { Box, Heading, Text, Stack, Badge } from '@chakra-ui/react';
-import { motion } from 'framer-motion';
-const MotionBox = motion(Box);
+
+
 
 const projects = [
   {
@@ -23,7 +23,7 @@ const projects = [
 
 export default function ProjectsPage() {
   return (
-  <MotionBox initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} maxW="3xl" mx="auto" mt={10} p={6}>
+  <Box maxW="3xl" mx="auto" mt={10} p={6}>
       <Heading as="h1" size="xl" mb={8} color="teal.300">
         Projects
       </Heading>
@@ -40,6 +40,6 @@ export default function ProjectsPage() {
           </Box>
         ))}
       </Stack>
-  </MotionBox>
+  </Box>
   );
 }

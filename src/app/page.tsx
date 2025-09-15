@@ -1,6 +1,6 @@
 import { Box, Heading, Text, Stack, SimpleGrid, Badge } from '@chakra-ui/react';
-import { motion } from 'framer-motion';
-const MotionBox = motion(Box);
+
+
 
 const skills = [
   'TypeScript',
@@ -25,7 +25,7 @@ const interestingData = [
 
 export default function HomePage() {
   return (
-  <MotionBox initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} maxW="3xl" mx="auto" mt={10} p={6}>
+  <Box maxW="3xl" mx="auto" mt={10} p={6}>
       <Heading as="h1" size="2xl" mb={4} color="teal.300">
         Hi, I&apos;m Erdoan Shaziman
       </Heading>
@@ -50,6 +50,6 @@ export default function HomePage() {
           </Badge>
         ))}
       </Stack>
-  </MotionBox>
+  </Box>
   );
 }
