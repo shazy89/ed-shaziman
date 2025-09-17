@@ -1,6 +1,11 @@
-import { ChakraProvider, defaultSystem } from "@chakra-ui/react";
-import type { ReactNode } from "react";
+"use client";
 
-export default function Providers({ children }: { children: ReactNode }) {
-  return <ChakraProvider value={defaultSystem}>{children}</ChakraProvider>;
+import { ChakraProvider, createSystem, defaultConfig } from "@chakra-ui/react";
+
+import * as React from "react";
+
+const darkSystem = createSystem(defaultConfig);
+
+export function ThemeProvider({ children }: { children: React.ReactNode }) {
+  return <ChakraProvider value={darkSystem}>{children}</ChakraProvider>;
 }
